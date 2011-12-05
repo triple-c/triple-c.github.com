@@ -44,7 +44,9 @@ span.preview_project:hover {
 }
 
 section#preview_box {
-    height: 328px;
+    padding-top: 16px;
+    min-height: 328px;
+    border-top: 4px solid #888888;
     overflow: auto;
 }
 
@@ -74,7 +76,7 @@ section#lovely_family_preview {
 }
 
 section#lovely_family_preview h3 {
-    margin: 0;
+    margin: 0 0 8px 0;
     text-align: center;
     font-size: 32px;
     color: #dd8888;
@@ -82,12 +84,14 @@ section#lovely_family_preview h3 {
 
 div#lovely_family_msg_box {
     position: relative;
+    margin: 0 auto;
+    width: 400px;
 }
 
 img#lovely_family_user_image {
+    float: left;
     border-radius: 4px;
     border: 4px solid #444444;
-    float: left;
 }
 
 span#lovely_family_news_feed {
@@ -98,19 +102,19 @@ span#lovely_family_news_feed {
     min-height: 20px;
     cursor: pointer;
     font-size: 20px;
-    color: green;
+    color: #888888;
 }
 
 span#lovely_family_changable_feed {
     padding: 4px 8px;
     border-radius: 4px 4px 0 0;
-    color: #dd8888;
+    color: #55bb88;
 }
 
 div#lovely_family_news_feed_block {
     display: none;
     position: absolute;
-    top: 44px;
+    top: 46px;
     left: 84px;
     width: 414px;
     height: 94px;
@@ -124,6 +128,33 @@ textarea#lovely_family_news_feed_box {
     width: 400px;
     height: 80px;
     resize: none;
+}
+
+div#lovely_family_news_feed_wall {
+    clear: both;
+    padding: 8px 64px;
+}
+
+div.lovely_family_member_news_feed {
+    float: left;
+    margin: 8px;
+    padding: 8px;
+    width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 0 8px #888888;
+    background: white;
+}
+
+img.lovely_family_member_image {
+    float: left;
+    border-radius: 4px;
+    border: 4px solid #444444;
+}
+
+p.lovely_family_member_status {
+    float: left;
+    padding: 8px;
+    color: #888888;
 }
 
 footer {

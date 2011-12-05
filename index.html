@@ -17,21 +17,37 @@
                             );
                         }
                     );
+
                     $('span#lovely_family_changable_feed').click(function()
                         {
-                            $(this).css('background', '#888888');
-                            $(this).css('color', 'white');
-                            $(this).css('boxShadow', '0 0 8px #444444');
+                            $('textarea#lovely_family_news_feed_box').val('');
+                            $(this).css({'background': '#888888', 'color': 'white', 'boxShadow': '0 0 8px #444444'});
                             $('div#lovely_family_news_feed_block').show();
                             $('textarea#lovely_family_news_feed_box').focus();
                         }
                     );
+
                     $('textarea#lovely_family_news_feed_box').blur(function()
                         {
                             $('div#lovely_family_news_feed_block').hide();
-                            $('span#lovely_family_changable_feed').css('background', 'inherit');
-                            $('span#lovely_family_changable_feed').css('color', '#dd8888');
-                            $('span#lovely_family_changable_feed').css('boxShadow', 'none');
+                            $('span#lovely_family_changable_feed').css({'background': 'inherit', 'color': '#55bb88', 'boxShadow': 'none'});
+                        }
+                    );
+
+                    $('textarea#lovely_family_news_feed_box').keypress(function(e)
+                        {
+                            if (!e.shiftKey && e.keyCode == 13)
+                            {
+                                //e.preventDefault();
+                                var my_status = $('textarea#lovely_family_news_feed_box').val();
+                                $('div#lovely_family_news_feed_block').hide();
+                                $('span#lovely_family_changable_feed').css({'background': 'inherit', 'color': '#55bb88', 'boxShadow': 'none'});
+                                if (my_status != '')
+                                {
+                                    $('span#lovely_family_changable_feed').html(my_status);
+                                }
+                                $('p#lovely_family_chenjenping_status > span').html(my_status);
+                            }
                         }
                     );
                 }
@@ -55,7 +71,36 @@
                 <section id="lovely_family_preview" class="project_preview">
                     <h3>lovely family</h3>
                     <div id="lovely_family_msg_box">
-                        <img id="lovely_family_user_image" src="images/chenjenping.jpg"><span id="lovely_family_news_feed">is<span id="lovely_family_changable_feed">coding</span>now.</span><div id="lovely_family_news_feed_block"><textarea id="lovely_family_news_feed_box" placeholder="what I'm doing."></textarea></div>
+                        <img id="lovely_family_user_image" src="images/chenjenping.jpg"><span id="lovely_family_news_feed">I'm<span id="lovely_family_changable_feed">coding</span>now.</span>
+                        <div id="lovely_family_news_feed_block">
+                            <textarea id="lovely_family_news_feed_box" placeholder="what I'm doing."></textarea>
+                        </div>
+                    </div>
+                    <div id="lovely_family_news_feed_wall">
+                        <div class="lovely_family_member_news_feed">
+                            <img class="lovely_family_member_image" src="images/chenjenping.jpg">
+                            <p id="lovely_family_chenjenping_status" class="lovely_family_member_status">
+                                I'm <span>coding</span> now.
+                            </p>
+                        </div>
+                        <div class="lovely_family_member_news_feed">
+                            <img class="lovely_family_member_image" src="images/bicyclechenjenping.jpg">
+                            <p class="lovely_family_member_status">
+                                I'm <span>having breakfast</span> now.
+                            </p>
+                        </div>
+                        <div class="lovely_family_member_news_feed">
+                            <img class="lovely_family_member_image" src="images/holding_hand.jpg">
+                            <p class="lovely_family_member_status">
+                                I'm <span>having lunch</span> now.
+                            </p>
+                        </div>
+                        <div class="lovely_family_member_news_feed">
+                            <img class="lovely_family_member_image" src="images/sun.jpg">
+                            <p class="lovely_family_member_status">
+                                I'm <span>having dinner</span> now.
+                            </p>
+                        </div>
                     </div>
                 </section>
         </article>
