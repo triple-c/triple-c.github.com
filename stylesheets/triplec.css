@@ -1,0 +1,34 @@
+body {
+    margin: 0 auto;
+    width: 800px;
+    background: #dddddd;
+    font-family: Verdana, Helvetica, sans-serif;
+}
+
+header > h1 {
+    cursor: default;
+    text-align: center;
+    color: green;
+}
+
+article#main {
+    min-height: 560px;
+}
+
+article#main h2 {
+    cursor: default;
+}
+
+ul#running_project li > a {
+    text-decoration: none;
+    color: #dd8888;
+}
+
+ul#running_project li > a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    cursor: default;
+    color: #888888;
+}
