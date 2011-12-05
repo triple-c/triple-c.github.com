@@ -4,6 +4,39 @@
         <meta charset="utf-8">
         <title>triple c</title>
         <link type="text/css" rel="stylesheet" href="stylesheets/triplec.css">
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function()
+                {
+                    $('span#preview_lovely_family').click(function()
+                        {
+                            $('section#preview_blank').fadeOut(800, function()
+                                {
+                                    $('section#lovely_family_preview').fadeIn(800);
+                                }
+                            );
+                        }
+                    );
+                    $('span#lovely_family_changable_feed').click(function()
+                        {
+                            $(this).css('background', '#888888');
+                            $(this).css('color', 'white');
+                            $(this).css('boxShadow', '0 0 8px #444444');
+                            $('div#lovely_family_news_feed_block').show();
+                            $('textarea#lovely_family_news_feed_box').focus();
+                        }
+                    );
+                    $('textarea#lovely_family_news_feed_box').blur(function()
+                        {
+                            $('div#lovely_family_news_feed_block').hide();
+                            $('span#lovely_family_changable_feed').css('background', 'inherit');
+                            $('span#lovely_family_changable_feed').css('color', '#dd8888');
+                            $('span#lovely_family_changable_feed').css('boxShadow', 'none');
+                        }
+                    );
+                }
+            );
+        </script>
     </head>
     <body>
         <header>
@@ -12,8 +45,19 @@
         <article id="main">
             <h2>Running Project:</h2>
             <ul id="running_project">
-                <li><a href="http://lovely-family.appspot.com/">Lovely Family</a></li>
+                <li><a href="http://lovely-family.appspot.com/">Lovely Family</a><span id="preview_lovely_family" class="preview_project">preview</span></li>
             </ul>
+            <section id="preview_box">
+                <section id="preview_blank">
+                    <h3>Preview Box</h3>
+                    <p>Click the "preview" button after projects to preview projects here.</p>
+                </section>
+                <section id="lovely_family_preview" class="project_preview">
+                    <h3>lovely family</h3>
+                    <div id="lovely_family_msg_box">
+                        <img id="lovely_family_user_image" src="images/chenjenping.jpg"><span id="lovely_family_news_feed">is<span id="lovely_family_changable_feed">coding</span>now.</span><div id="lovely_family_news_feed_block"><textarea id="lovely_family_news_feed_box" placeholder="what I'm doing."></textarea></div>
+                    </div>
+                </section>
         </article>
         <footer>
             <p>
